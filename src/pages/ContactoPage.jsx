@@ -1,47 +1,28 @@
-/*import nombre from '../assets/nombre.png'
-import telefono from '../assets/telefono.png'
-import correo from '../assets/correo.png'
-import ubicacion from '../assets/ubicacion.png'
-import linkedin from '../assets/linked.png'
+import React from 'react';
+import Profile from '../data/Contact';
 
 export const ContactoPage = () => {
-  const contacto={
-    nombre:'Daniela Fernanda Alferez Edegua',
-    telefono:'3132789121',
-    correo:'danielaalferez23@gmail.com',
-    ciudad:'Tame-Arauca',
-    linkedin:'linkedin.com/in/danielaalferez/'
-  };
+  const profileData = Profile[0]; 
 
   return (
-    
-      <div className="container mt-4">
-        <div className="row">
-          <div className="col d-flex flex-column align-items-center" style={{backgroundColor:'#f0f0f0'}}>
-            <div className="d-flex align-items-center mb-4">
-              <img src={nombre} alt="Nombre" className="rounded me-2" style={{ width: 30, height: 30 }} />
-              <p className="mb-0" style={{fontStyle:'italic'}}>{contacto.nombre}</p>
-            </div>
-            <div className="d-flex align-items-center mb-4">
-              <img src={telefono} alt="Teléfono" className="rounded me-2" style={{ width: 30, height: 30 }} />
-              <p className="mb-0" style={{fontStyle:'italic'}}>{contacto.telefono}</p>
-            </div>
-            <div className="d-flex align-items-center mb-4">
-              <img src={correo} alt="Correo" className="rounded me-2" style={{ width: 30, height: 30 }} />
-              <p className="mb-0" style={{fontStyle:'italic'}}>{contacto.correo}</p>
-            </div>
-            <div className="d-flex align-items-center mb-4">
-              <img src={ubicacion} alt="Ubicación" className="rounded me-2" style={{ width: 30, height: 30 }} />
-              <p className="mb-0" style={{fontStyle:'italic'}}>{contacto.ciudad}</p>
-            </div>
-            <div className="d-flex align-items-center mb-4">
-              <img src={linkedin} alt="LinkedIn" className="rounded me-2" style={{ width: 30, height: 30 }} />
-              <p className="mb-0" style={{fontStyle:'italic'}}>{contacto.linkedin}</p>
-            </div>
-          </div>
-        </div>
+    <form>
+      <h1>Contacto</h1>
+      <div className="mb-3">
+        <label htmlFor="email" className="form-label">Correo electrónico:</label>
+        <input type="email" className="form-control" id="email" defaultValue={profileData.correo} readOnly />
       </div>
-    
-  );
-};
-*/
+      <div className="mb-3">
+        <label htmlFor="phone" className="form-label">Número de teléfono:</label>
+        <input type="text" className="form-control" id="phone" defaultValue={profileData.numero} readOnly />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="facebook" className="form-label">Facebook:</label>
+        <input type="text" className="form-control" id="facebook" defaultValue={profileData.Facebook} readOnly />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="github" className="form-label">GitHub:</label>
+        <input type="text" className="form-control" id="github" defaultValue={profileData.Github} readOnly />
+      </div>
+    </form>
+    )
+}

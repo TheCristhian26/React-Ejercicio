@@ -1,34 +1,43 @@
-/*import appPeliculas2 from '../assets/appPeliculas2.png';
-import juegoPreguntas from '../assets/juegoPreguntas.png';
-import blog from '../assets/blog.png';
+import React from 'react';
+import Profile from '../data/briefcase.js';
 
 export const PortafolioPage = () => {
-    const portafolio = {
-        proyecto1: 'En este proyecto académico se realizó una aplicación de películas en el área de móvil I, con el framework de Vue.',
-        proyecto2: 'En este proyecto se realizó una app de juegos de preguntas en el área de móvil I con Vue.',
-        proyecto3: 'En este proyecto académico se realizó un blog de películas en el área de móvil I.'
-    };
+  const profileData1 = Profile[0]; 
+  const ProfileData2 = Profile[1];
+  const ProfileData3 = Profile[2];
 
-    return (
-        <>
-            <div className='container mt-4'>
-                <div className='row'>
-                    <div className='col-md-6 d-flex flex-column align-items-center mb-5'>
-                        <img src={appPeliculas2} alt="educa" className="rounded me-2" style={{ width: 600, height: 300 }} />
-                        <p className="mb-0" style={{ fontStyle:'italic', fontSize: '18px' }}>{portafolio.proyecto1}</p>
-                    </div>
-                    <div className='col-md-6 d-flex flex-column align-items-center mb-5'>
-                        <img src={juegoPreguntas} alt="educación" className="rounded me-2" style={{ width: 600, height: 300 }} />
-                        <p className="mb-0" style={{ fontStyle:'italic', fontSize: '18px' }}>{portafolio.proyecto2}</p>
-                    </div>
-                    <div className='col-md-6 d-flex flex-column align-items-center mb-5'>
-                        <img src={blog} alt="educación" className="rounded me-2" style={{ width: 600, height: 300 }} />
-                        <p className="mb-0" style={{ fontStyle:'italic', fontSize: '18px' }}>{portafolio.proyecto3}</p>
-                    </div>
-                </div>
+  return (
+
+      <div className="row">
+        <div className="col-md-4">
+          <div className="card">
+            <img src={profileData1.img1} className="card-img-top" alt="Proyecto 1" />
+            <div className="card-body">
+              <h5 className="card-title">{profileData1.proyecto1}</h5>
+              <p className="card-text">{profileData1.descripcion1}</p>
             </div>
-            <div style={{ backgroundColor: 'turquoise', color: 'white', padding: '5px' }}></div>
-        </>
-    );
-};
-*/
+          </div>
+        </div>
+        <div className="col-md-4">
+          <div className="card">
+            <img src={ProfileData2.img2} className="card-img-top" alt="Proyecto 2" />
+            <div className="card-body">
+              <h5 className="card-title">{ProfileData2.proyecto2}</h5>
+              <p className="card-text">{ProfileData2.descripcion2}</p>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-4">
+          <div className="card">
+            <img src={ProfileData3.img3} className="card-img-top" alt="Proyecto 3" />
+            <div className="card-body">
+              <h5 className="card-title">{ProfileData3.proyecto3}</h5>
+              <p className="card-text">{ProfileData3.descripcion3}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  )
+}
+
